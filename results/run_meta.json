@@ -1,0 +1,257 @@
+{
+  "assignment": "Project 6: SBERT sentence embeddings, within-project, temporal ordering",
+  "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "seed": 42,
+  "final_seeds": [
+    42,
+    43,
+    44
+  ],
+  "n_folds": 5,
+  "dev_test_split": "chronological ~80:20 per project",
+  "validation": "rolling-origin: development data in 6 chronological blocks; fold k trains on blocks 0..k and validates on block k+1",
+  "batch_size": 64,
+  "max_epochs": 60,
+  "patience": 8,
+  "weight_decay": 0.0001,
+  "hidden": 64,
+  "grad_clip": 1.0,
+  "inner_holdout_fraction": 0.15,
+  "min_inner_rows": 10,
+  "hp_grid": [
+    {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    {
+      "lr": 0.0005,
+      "dropout": 0.4
+    }
+  ],
+  "run_ridge_check": true,
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "sp_max": 100.0,
+  "loss": "HuberLoss(delta=1.0)",
+  "optimizer": "Adam",
+  "target_transform": "log1p, then standardised on the rows used for fitting; inverse transform and clip to [0, sp_max]",
+  "smoke_test": false,
+  "config_hash": "2f4c77d2",
+  "device": "cpu",
+  "n_projects": 39,
+  "project_epochs": {
+    "1": 3,
+    "2": 2,
+    "3": 9,
+    "4": 4,
+    "5": 4,
+    "6": 1,
+    "7": 4,
+    "8": 3,
+    "9": 2,
+    "10": 4,
+    "11": 3,
+    "12": 7,
+    "13": 5,
+    "14": 4,
+    "15": 2,
+    "16": 4,
+    "17": 8,
+    "18": 2,
+    "19": 1,
+    "20": 6,
+    "21": 3,
+    "22": 9,
+    "23": 8,
+    "24": 5,
+    "25": 3,
+    "26": 5,
+    "27": 2,
+    "28": 1,
+    "29": 3,
+    "30": 7,
+    "31": 5,
+    "32": 10,
+    "33": 3,
+    "34": 3,
+    "35": 2,
+    "36": 6,
+    "42": 3,
+    "43": 7,
+    "44": 2
+  },
+  "best_config_by_project": {
+    "1": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "2": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "3": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "4": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "5": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "6": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "7": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "8": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "9": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "10": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "11": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "12": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "13": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "14": {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    "15": {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    "16": {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    "17": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "18": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "19": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "20": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "21": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "22": {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    "23": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "24": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "25": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "26": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "27": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "28": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "29": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "30": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "31": {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    "32": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "33": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "34": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "35": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    },
+    "36": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "42": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "43": {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    "44": {
+      "lr": 0.0005,
+      "dropout": 0.4
+    }
+  },
+  "epoch_rule": "median best epoch of folds with inner early stopping; MAX_EPOCHS if none",
+  "baselines": "project-specific median and mean of development labels"
+}

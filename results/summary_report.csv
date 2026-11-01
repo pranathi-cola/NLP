@@ -1,0 +1,7 @@
+representation,split,metric,main_macro_mean,sd_across_projects,mean_within_project_fold_sd,pooled
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,5-fold rolling-origin CV,MAE,2.2756223655952588,1.9446868135130357,0.7066786383360102,
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,5-fold rolling-origin CV,MdAE,1.5056750225509445,1.1136830644965896,0.4620706432265311,
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,held-out temporal test,MAE,1.9772224678756856,1.3321199206538672,,2.7047635267019516
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,held-out temporal test,MdAE,1.3260381264966923,1.033264123495948,,1.3515207474214668
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,held-out test: median baseline,MAE,1.9441399993092447,1.3622110764328181,,
+SBERT all-MiniLM-L6-v2 + three-layer 1D CNN,held-out test: median baseline,MdAE,1.4679487179487178,1.1559051579360002,,
