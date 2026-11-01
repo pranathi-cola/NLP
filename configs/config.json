@@ -1,0 +1,53 @@
+{
+  "assignment": "Project 6: SBERT sentence embeddings, within-project, temporal ordering",
+  "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "seed": 42,
+  "final_seeds": [
+    42,
+    43,
+    44
+  ],
+  "n_folds": 5,
+  "dev_test_split": "chronological ~80:20 per project",
+  "validation": "rolling-origin: development data in 6 chronological blocks; fold k trains on blocks 0..k and validates on block k+1",
+  "batch_size": 64,
+  "max_epochs": 60,
+  "patience": 8,
+  "weight_decay": 0.0001,
+  "hidden": 64,
+  "grad_clip": 1.0,
+  "inner_holdout_fraction": 0.15,
+  "min_inner_rows": 10,
+  "hp_grid": [
+    {
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    {
+      "lr": 0.001,
+      "dropout": 0.4
+    },
+    {
+      "lr": 0.0005,
+      "dropout": 0.2
+    },
+    {
+      "lr": 0.0005,
+      "dropout": 0.4
+    }
+  ],
+  "run_ridge_check": true,
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "sp_max": 100.0,
+  "loss": "HuberLoss(delta=1.0)",
+  "optimizer": "Adam",
+  "target_transform": "log1p, then standardised on the rows used for fitting; inverse transform and clip to [0, sp_max]",
+  "smoke_test": false
+}
